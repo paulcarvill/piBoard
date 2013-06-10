@@ -26,7 +26,7 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 default_environment["RAILS_ENV"] = 'production'
 
-# Use our ruby-1.9.2-p290@my_site gemset
+# Use our ruby-1.9.2-p290@piBoard gemset
 default_environment["PATH"]         = "/usr/local/rvm/gems/ruby-1.9.3-p429@piBoard/bin:/usr/local/rvm/gems/ruby-1.9.3-p429@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p429/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
 default_environment["GEM_HOME"]     = "/usr/local/rvm/gems/ruby-1.9.3-p429@piBoard"
 default_environment["GEM_PATH"]     = "/usr/local/rvm/gems/ruby-1.9.3-p429@piBoard:/usr/local/rvm/gems/ruby-1.9.3-p429@global"
@@ -99,7 +99,7 @@ namespace :deploy do
 
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
-    run "kill -s USR2 `cat /tmp/unicorn.my_site.pid`"
+    run "kill -s USR2 `cat /tmp/unicorn.piBoard.pid`"
   end
 
   desc "Start unicorn"
@@ -109,7 +109,7 @@ namespace :deploy do
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat /tmp/unicorn.my_site.pid`"
+    run "kill -s QUIT `cat /tmp/unicorn.piBoard.pid`"
   end
 
   namespace :rollback do
