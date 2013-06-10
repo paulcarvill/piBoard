@@ -8,6 +8,10 @@ set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
 set :deploy_to,       "/home/deployer/apps/piBoard"
+
+set :unicorn_conf, "#{current_path}/config/unicorn.rb"
+set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
+
 set :normalize_asset_timestamps, false
 
 set :user,            "deployer"
