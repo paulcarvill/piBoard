@@ -2,7 +2,7 @@ require 'bundler/capistrano'
 
 set :scm,             :git
 set :repository,      "git@github.com:paulcarvill/piBoard.git"
-set :branch,          "origin/master"
+set :branch,          "master"
 
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
