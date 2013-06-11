@@ -1,5 +1,5 @@
 # define paths and filenames
-deploy_to = "/srv/net"
+deploy_to = "/home/deployer/apps/piBoard"
 rack_root = "#{deploy_to}/current"
 pid_file = "#{deploy_to}/shared/pids/unicorn.pid"
 socket_file= "#{deploy_to}/shared/unicorn.sock"
@@ -26,3 +26,4 @@ before_fork do |server, worker|
     end
   end
 end
+
